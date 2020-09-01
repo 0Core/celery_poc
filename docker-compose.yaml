@@ -1,0 +1,29 @@
+version: "3.7"
+services:
+    rabbitmq:
+        image: 'rabbitmq:3-management'
+        hostname: 'rabbit'
+        expose:
+          - 5672
+        environment:
+            RABBITMQ_DEFAULT_USER: 'guest'
+            RABBITMQ_DEFAULT_PASS: 'guest'
+            RABBITMQ_DEFAULT_VHOST: '/'
+        ports:
+          - '15672:15672'
+          - '5672:5672'
+    redis:
+        hostname: 'redis'
+        image: redis
+        ports:
+          - '6379:6379'
+        expose:
+          - 6379
+    poc:
+        image: poc:latest
+        depends_on:
+          - rabbitmq
+          - redis
+        ports:
+          - '7090:4000'
+        container_name: poc_server

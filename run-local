@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+docker build -t poc .
+docker-compose up -d 
+sleep 20
+docker exec -it poc_server celery worker -A app.celery --loglevel=info
