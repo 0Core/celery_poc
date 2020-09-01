@@ -1,17 +1,17 @@
 # Flask -> Celery with RabbitMQ and Redis 
 
-***Run docker compose with RabbitMQ,Redis and Flask server with demo application
+***Run docker compose with RabbitMQ,Redis and Flask server with demo application***
 ```
 ./run-local
 ```
 
-***Shutdown docker compose
+***Shutdown docker compose***
 
 ```
 ./close-local
 ```
 
-***Use curl or postman
+***Use curl or postman***
 
 ```
 #return server status
